@@ -11,8 +11,20 @@
  * For ([1, 2, 3], 2) should return 1
  *
  */
-function findIndex(/* array, value */) {
-  throw new Error('Not implemented');
+function findIndex(array, value) {
+  const updatePivot = (high, low) => Math.floor((high + low) / 2);
+
+  let low = 0;
+  let high = array.length - 1;
+  let pivot = updatePivot(high, low);
+
+  while (low <= high) {
+    pivot = updatePivot(high, low);
+    if (array[pivot] === value) return pivot;
+    if (array[pivot] < value) low = pivot + 1;
+    if (array[pivot] > value) high = pivot - 1;
+  }
+  return -1;
 }
 
 module.exports = findIndex;
