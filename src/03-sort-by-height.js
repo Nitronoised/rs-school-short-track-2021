@@ -1,5 +1,5 @@
 /**
- * Given an array with heights, sort them except if the value is -1.
+ * Given an array with heights, sort them except if the value is -1. Return should match standards
  *
  * @param {Array} arr
  * @return {Array}
